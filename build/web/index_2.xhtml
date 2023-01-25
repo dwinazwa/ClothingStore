@@ -1,0 +1,132 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>order</title>
+    
+
+<link rel="stylesheet" href="css/style_2.css"></link>
+<link rel="stylesheet" href="css/demo.css"></link>
+  
+  </h:head>
+  <h:body>
+ <header class="intro">
+ <h1>CLOTHING STORE </h1>
+ <p>A shopping cart</p>
+
+ <div class="action">
+     <a href="Home.xhtml" title="Back to home page" class="btn back">Back to home page</a>
+ </div>
+ </header>
+  
+      
+ <main>
+     
+    <div class="container"> 
+   <h1>PRODUCTS</h1>
+   <div id="alerts"></div>
+  
+<div class="cart-container">
+        <div class="product">
+            <h3 class="productname">Denim Skirt</h3> 
+            <p class="price">$100</p>
+            <button class="addtocart">Add To Cart</button>
+        </div>
+
+        <div class="product">
+            <h3 class="productname">Green Knitted Pants</h3>
+            <p class="price">$100</p>
+            <button class="addtocart">Add To Cart</button>
+        </div>
+        <div class="product">
+            <h3 class="productname">Flamboyan Shirt</h3>
+            <p class="price">$100</p>
+            <button class="addtocart">Add To Cart</button>
+        </div>
+     <div class="product">
+            <h3 class="productname">Denim Pants</h3>            
+            <p class="price">$100</p>
+            <button class="addtocart">Add To Cart</button>
+             </div>
+   
+        <div class="product">
+            <h3 class="productname">Floral Chiffon Shirts</h3>            
+            <p class="price">$100</p>
+            <button class="addtocart">Add To Cart</button>
+        </div>
+ 
+             <div class="product">
+            <h3 class="productname">Pleated Skirt</h3>            
+            <p class="price">$100</p>
+            <button class="addtocart">Add To Cart</button>
+            </div>
+             <div class="product">
+            <h3 class="productname">Pleated Shirt</h3>            
+            <p class="price">$100</p>
+            <button class="addtocart">Add To Cart</button>
+    </div>
+             <div class="product">
+            <h3 class="productname">Pink Chiffon Shirt</h3>            
+            <p class="price">$100</p>
+            <button class="addtocart">Add To Cart</button>
+   </div>
+             <div class="product">
+            <h3 class="productname">White Ribbon Shirt</h3>            
+            <p class="price">$100</p>
+            <button class="addtocart">Add To Cart</button>
+     </div>
+             <div class="product">
+            <h3 class="productname">Brown Shirt</h3>            
+            <p class="price">$100</p>
+            <button class="addtocart">Add To Cart</button>
+     </div>
+              <div class="product">
+            <h3 class="productname">Two Tone Shirt</h3>            
+            <p class="price">$100</p>
+            <button class="addtocart">Add To Cart</button>
+     </div>
+     
+             <div class="product">
+            <h3 class="productname">Brown Skirt</h3>            
+            <p class="price">$100</p>
+            <button class="addtocart">Add To Cart</button>
+        </div>
+     </div>
+
+        <div class="cart-container">
+          <h2>Cart</h2>
+          <table>
+            <thead>
+              <tr>
+              <th><strong>Product</strong></th>
+              <th><strong>Price</strong></th>
+            </tr>
+            </thead>
+            <tbody id="carttable">
+            </tbody>
+          </table>
+         
+          <table id="carttotals">
+            <tr>
+              <td><strong>Items</strong></td>
+              <td><strong>Total</strong></td>
+            </tr>
+            <tr>
+              <td>x <span id="itemsquantity">0</span></td>
+             
+              <td>$<span id="total">0</span></td>
+            </tr></table>
+
+            
+          <div class="cart-buttons">  
+            <button id="emptycart">Empty Cart</button>
+            <a href="payment.xhtml"><button id="checkout">Checkout</button></a>
+          </div>
+        </div>
+</div>
+
+ </main>
+        <script  src="js/script_1.js"></script> 
+  </h:body>
+</html>

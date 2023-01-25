@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <title>Sign In</title>
+        <link rel="stylesheet" href="css/login.css" />
+            <style>
+            .input_text[type=text], input[type=password]
+            {
+                width: 65%;
+                padding: 10px 18px;
+                margin: 15px 0px;
+                display: inline-block;
+                border: 15px solid #ccc;
+            }
+            
+            
+            .txt_color
+            {
+                color: black;
+            }
+            
+        
+            
+            .button_log
+            {
+                background-color: #4CAF50;
+                background-image: linear-gradient(45deg, cyan, purple);
+                color: white;
+                padding: 10px 20px;
+                margin: 8px 0px;
+                border: none;
+                cursor: pointer;
+                width: 50%;
+            }
+            
+            .button_log1
+            {
+                background-color: #4CAF50;
+                background-image: linear-gradient(45deg, cyan, purple);
+                color: white;
+                padding: 10px 20px;
+                margin: 8px 0px;
+                border: none;
+                cursor: pointer;
+                width: 50%;
+            }
+            
+           
+            .model-content
+            {
+          
+               background-color: #fefefe;
+               margin: 5% auto 15% auto;
+               border: 2px solid #888;
+               width: 50%;
+               text-align: center;
+            }
+        
+        </style>
+    </h:head>
+    <h:body>
+        <h:form class="model-content">
+            <h2 class="txt_color">Login Here</h2>     
+         <h:inputText a:placeholder="Email" class="input_text" value="#{tblUser.ussername}"/><br/>
+         <h:inputText a:placeholder="Password" class="input_text" value="#{tblUser.password}"/>&nbsp;
+         <h:commandButton value="Sign In" class="button_log" action="#{tblUser.login_user()}"/>&nbsp;
+         <h:commandButton value="Don't Have an account? " class="button_log" action="/signup.xhtml"/>&nbsp;
+         <h:commandButton value="Web" class="button_log" action="/Home.xhtml"/>
+        </h:form>
+    </h:body>
+</html>

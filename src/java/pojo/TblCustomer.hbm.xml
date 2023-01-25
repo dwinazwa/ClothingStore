@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 15, 2022 2:17:37 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pojo.TblCustomer" table="tbl_customer" catalog="clothingstore" optimistic-lock="version">
+        <id name="idCustomer" type="java.lang.Integer">
+            <column name="id_customer" />
+            <generator class="identity" />
+        </id>
+        <property name="namaCustomer" type="string">
+            <column name="nama_customer" length="55" not-null="true" />
+        </property>
+        <property name="alamat" type="string">
+            <column name="alamat" length="55" not-null="true" />
+        </property>
+        <property name="noTlp" type="string">
+            <column name="no_tlp" length="15" not-null="true" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="25" not-null="true" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="10" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

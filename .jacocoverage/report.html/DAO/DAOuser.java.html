@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>DAOuser.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;clothingstore&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">DAO</a> &gt; <span class="el_source">DAOuser.java</span></div><h1>DAOuser.java</h1><pre class="source lang-java linenums">/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package DAO;
+
+import java.util.ArrayList;
+import java.util.List;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import pojo.ClothingstoreUtil;
+import pojo.TblUser;
+
+/**
+ *
+ * @author 
+ */
+<span class="fc" id="L20">public class DAOuser {</span>
+    public List&lt;TblUser&gt; retrieveTblUser() {
+<span class="fc" id="L22">        List stud = new ArrayList();</span>
+<span class="fc" id="L23">        TblUser stud1 = new TblUser();</span>
+<span class="fc" id="L24">        Transaction trans = null;</span>
+<span class="nc" id="L25">        Session session = ClothingstoreUtil.getSessionFactory().openSession();</span>
+        try {
+<span class="nc" id="L27">            trans = session.beginTransaction();</span>
+<span class="nc" id="L28">            Query query = session.createQuery(&quot;from TblUser&quot;);</span>
+<span class="nc" id="L29">            stud = query.list();</span>
+<span class="nc" id="L30">            stud.add(stud1.getIdUser());</span>
+<span class="nc" id="L31">            stud.add(stud1.getUssername());</span>
+<span class="nc" id="L32">            stud.add(stud1.getPassword());</span>
+<span class="nc" id="L33">            trans.commit();</span>
+<span class="nc" id="L34">        } catch (Exception e) {</span>
+<span class="nc" id="L35">            System.out.println(e);</span>
+<span class="nc" id="L36">        }</span>
+<span class="nc" id="L37">        return stud;</span>
+        
+        
+    }
+    public List&lt;TblUser&gt; getbyID(String idU){
+<span class="fc" id="L42">        TblUser usr = new TblUser();</span>
+<span class="fc" id="L43">        List &lt;TblUser&gt; iUsr = new ArrayList();</span>
+        
+<span class="fc" id="L45">        Transaction trans = null;</span>
+<span class="nc" id="L46">        Session session = ClothingstoreUtil.getSessionFactory().openSession();</span>
+        
+        try {
+<span class="nc" id="L49">            trans = session.beginTransaction();</span>
+<span class="nc" id="L50">            Query query = session.createQuery(&quot;from TblUser where id_user = :id&quot;);</span>
+<span class="nc" id="L51">            query.setString(&quot;id&quot;, idU);</span>
+<span class="nc" id="L52">            usr = (TblUser) query.uniqueResult();</span>
+<span class="nc" id="L53">            iUsr = query.list();</span>
+<span class="nc" id="L54">            trans.commit();</span>
+<span class="nc" id="L55">        } catch (Exception e) {</span>
+<span class="nc" id="L56">            System.out.println(e);</span>
+<span class="nc" id="L57">        }</span>
+<span class="nc" id="L58">        return iUsr;</span>
+    }
+    
+    public void deleteUser(Integer idU)
+    {
+<span class="fc" id="L63">        Transaction trans = null;</span>
+<span class="nc" id="L64">        Session session = ClothingstoreUtil.getSessionFactory().openSession();</span>
+        try {
+<span class="nc" id="L66">            trans = session.beginTransaction();</span>
+<span class="nc" id="L67">            TblUser usr = (TblUser) session.load(TblUser.class, new Integer(idU));</span>
+<span class="nc" id="L68">            session.delete(usr);</span>
+<span class="nc" id="L69">            trans.commit();</span>
+<span class="nc" id="L70">        } catch (Exception e) {</span>
+<span class="nc" id="L71">            System.out.println(e);</span>
+<span class="nc" id="L72">        }</span>
+<span class="nc" id="L73">    }</span>
+    
+    public void editUser(TblUser usr)
+    {
+<span class="fc" id="L77">        Transaction trans = null;</span>
+<span class="nc" id="L78">        Session session = ClothingstoreUtil.getSessionFactory().openSession();</span>
+        try {
+<span class="nc" id="L80">            trans = session.beginTransaction();</span>
+<span class="nc" id="L81">            session.update(usr);</span>
+<span class="nc" id="L82">            trans.commit();</span>
+                    
+<span class="nc" id="L84">        } catch (Exception e) {</span>
+<span class="nc" id="L85">            System.out.println(e);</span>
+<span class="nc" id="L86">        }</span>
+<span class="nc" id="L87">    }</span>
+
+     //To change body of generated methods, choose Tools | Templates.
+    }
+    
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>
